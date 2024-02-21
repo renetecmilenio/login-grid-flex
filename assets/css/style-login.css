@@ -1,0 +1,403 @@
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+img.logo {
+    max-width: 320px;
+}
+img.logo-80 {
+    margin-top: 15px;
+    max-width: 200px;
+}
+h1 {
+    color: #fff;
+    font-weight: 500;
+    margin: 0;
+}
+h2 {
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.3em;
+}
+h2.importante {
+    color: #0091f3;
+}
+p {
+    color: #fff;
+}
+.fa:not(.fa-user, .fa-lock) {
+    color: #000000;
+}
+.fa-lock,
+.fa-user {
+    color: #fff;
+}
+.cell-3 p a {
+    color: #0091f3;
+}
+button {
+    color: #fff;
+    padding: 8px 10px;
+    border: none;
+    text-shadow: 1px 1px 1px #0000004f;
+    font-weight: 500;
+    border-radius: 5px;
+
+}
+.btn-grad {
+    background-image: linear-gradient(to right, #036caf 0%, #26a0da 51%, #0877bd 100%);
+    padding: 10px 32px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 10px;
+    display: block;
+    cursor: pointer;
+}
+.btn-grad:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+        "main   aside"
+        "footer footer";
+    min-height: 100%;
+}
+
+main {
+    grid-area: main;
+    background-image: url(../img/bg.jpg);
+    padding: 20px;
+}
+
+
+aside {
+    grid-area: aside;
+    background-image: url(../img/background-login.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 1px 1px 14px #000;
+}
+
+
+footer {
+    grid-area: footer;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 0 20px;
+}
+
+#slide1,
+#slide2,
+#slide3,
+#slide4 {
+    background-image: url(../img/background-login.jpg);
+}
+
+
+footer span {
+    color: #0091f3;
+}
+
+/* para tabletas mdianas y laptops medianas */
+@media only screen and (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 
+                            1fr 
+                            auto;
+        grid-template-areas:
+            "main"
+            "aside"
+            "footer";
+    }
+    main {
+        grid-area: main;
+        order: 1;
+    }
+    aside {
+        grid-area: aside;
+        order: 2;
+        min-height: 50vh;
+    }
+}
+
+.container2 {
+    display: flex;
+    flex-wrap: wrap;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.cell.cell-4,
+.cell.cell-5 {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.cell-1 {
+    flex-basis: 50%;
+    display: flex;
+}
+.cell-2 {
+    flex-basis: 50%;
+    text-align: center;
+}
+.cell-3 {
+    flex-basis: 100%;
+}
+.cell-4 {
+    flex-basis: 50%;
+    border-right: #fff solid 1px;
+}
+.cell-5 {
+    flex-basis: 50%;
+}
+
+/* para moviles y tablets */
+@media screen and (max-width: 768px) {
+    .cell {
+        flex-basis: 100%;
+        margin-right: 0;
+    }
+    .cell-1 {
+        justify-content: center;
+    }
+    .cell.cell-2 {
+        margin-top: 40px;
+    }
+    .cell-4 {
+        border-right: none;
+    }
+}
+.input-icon-wrap {
+    /* */
+    display: flex;
+    flex-direction: row-reverse;
+    /* max-width: 80%; */
+    margin-bottom: 15px;
+}
+
+
+.input-icon {
+    background: #0091f3;
+}
+.input-with-icon {
+    border: none;
+    /* flex: 1; */
+}
+.input-icon,
+.input-with-icon {
+    padding: 5px 10px;
+}
+/* .input-with-icon {
+    border-radius: 0px 16px 16px 0px;
+}
+.input-icon {
+    border-radius: 16px 0px 0px 16px;
+} */
+input:focus {
+    outline: none;
+}
+
+
+/* S L I D E R */
+
+
+/* Slider*/
+.CSSgal {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    /* O establecer una altura fija */
+}
+/* SLIDER */
+.CSSgal .slider {
+    height: 100%;
+    white-space: nowrap;
+    font-size: 0;
+    transition: 0.8s;
+}
+
+/* SLIDES */
+.CSSgal .slider > * {
+    font-size: 1rem;
+    display: inline-block;
+    white-space: normal;
+    vertical-align: top;
+    height: 100%;
+    width: 100%;
+    background: none 50% no-repeat;
+    background-size: cover;
+}
+
+/* PREV/NEXT, contenedores y anclas */
+.CSSgal .prevNext {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    width: 100%;
+    height: 0;
+}
+.CSSgal .prevNext > div+div {
+    visibility: hidden;
+    /* Ocultar todo excepto el primer contenedor P/N */
+}
+.CSSgal .prevNext a {
+    background: #fff;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    line-height: 34px;
+    /* puede remplazarse */
+    text-align: center;
+    opacity: 0.7;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 9px;
+}
+.CSSgal .prevNext a:hover {
+    opacity: 1;
+}
+.CSSgal .prevNext a+a {
+    left: auto;
+    right: 9px;
+}
+
+/* navegación */
+.CSSgal .bullets {
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+}
+.CSSgal .bullets > a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-decoration: none;
+    text-align: center;
+    background: rgba(255, 255, 255, 1);
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+.CSSgal .bullets>a+a {
+    background: rgba(255, 255, 255, 0.5);
+    /* Oscuro todo menos primero */
+}
+.CSSgal .bullets>a:hover {
+    background: rgba(255, 255, 255, 0.7) !important;
+}
+
+input:focus {
+
+    border: solid 2px #0091f3;
+  }
+
+
+  /* botones de navegación */
+/* todo: */
+.CSSgal>s:target~.bullets>* {
+    background: rgba(255, 255, 255, 0.5);
+}
+/* activo */
+#s1:target~.bullets>*:nth-child(1) {
+    background: rgba(255, 255, 255, 1);
+}
+#s2:target~.bullets>*:nth-child(2) {
+    background: rgba(255, 255, 255, 1);
+}
+#s3:target~.bullets>*:nth-child(3) {
+    background: rgba(255, 255, 255, 1);
+}
+#s4:target~.bullets>*:nth-child(4) {
+    background: rgba(255, 255, 255, 1);
+}
+/* More slides? Add here more rules */
+
+/* previo/siguiente visibilidad de contenedores */
+/* ALL: */
+.CSSgal>s:target~.prevNext>* {
+    visibility: hidden;
+}
+/* Activo: */
+#s1:target~.prevNext>*:nth-child(1) {
+    visibility: visible;
+}
+#s2:target~.prevNext>*:nth-child(2) {
+    visibility: visible;
+}
+#s3:target~.prevNext>*:nth-child(3) {
+    visibility: visible;
+}
+#s4:target~.prevNext>*:nth-child(4) {
+    visibility: visible;
+}
+
+/* animaciones del slider */
+#s1:target~.slider {
+    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+}
+#s2:target~.slider {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+}
+#s3:target~.slider {
+    transform: translateX(-200%);
+    -webkit-transform: translateX(-200%);
+}
+#s4:target~.slider {
+    transform: translateX(-300%);
+    -webkit-transform: translateX(-300%);
+}
+/* más reglas aquí */
+
+/* soobreescribir */
+.CSSgal {
+    color: #fff;
+    text-align: center;
+}
+.CSSgal .slider h2 {
+    margin-top: 40vh;
+    font-weight: 200;
+    letter-spacing: -0.06em;
+    word-spacing: 0.2em;
+    font-size: 3em;
+}
+.CSSgal a {
+    border-radius: 50%;
+    margin: 0 3px;
+    color: rgba(0, 0, 0, 0.8);
+    text-decoration: none;
+}
